@@ -1,0 +1,69 @@
+﻿@model EditUserViewModel
+
+<div class="row col-md-10 offset-md-1">
+    <h1 class="text-primary text-center pt-2">Delete User</h1>
+
+    <form method="post" asp-controller="Admin" asp-action="Delete">
+        <div class="border p-2 rounded">
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="UserName" class="col-12"></label>
+                <div class="col-md-12">
+                    <input asp-for="UserName" class="form-control" readonly />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DateOfBirth" class="col-12"></label>
+                <div class="col-md-12">
+                    <input asp-for="DateOfBirth" class="form-control" readonly />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="AadharNumber" class="col-12"></label>
+                <div class="col-md-12">
+                    <input asp-for="AadharNumber" class="form-control" readonly />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email" class="col-12"></label>
+                <div class="col-md-12">
+                    <input asp-for="Email" class="form-control" readonly />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="col-12"></label>
+                <div class="col-md-12">
+                    <input asp-for="PhoneNumber" class="form-control" readonly />
+                </div>
+            </div>
+
+           
+            <input type="hidden" asp-for="DateOfBirth" />
+            <input type="hidden" asp-for="AadharNumber" />
+
+            <div class="form-group pt-3">
+                <div class="col-md-6 offset-md-3">
+                    <button class="btn btn-danger form-control" type="submit">
+                        Delete
+                    </button>
+                </div>
+                <div class="col-md-6 offset-md-3 mt-2">
+                    <a asp-controller="Admin" asp-action="UserList" class="btn btn-secondary border">
+                        Back To UserList
+                    </a>
+                </div>
+            </div>
+        </div>
+    </form>
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</div>
